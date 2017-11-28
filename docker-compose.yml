@@ -4,7 +4,7 @@ services:
     image: gcr.io/tensorflow/tensorflow:latest
     volumes:
       - $PWD:/notebooks
-      - /Users/suyashkumar/Desktop/ISIC-images:/images
+      - $PWD/images:/images
     ports:
       - 8888:8888
     mem_limit: 10G
