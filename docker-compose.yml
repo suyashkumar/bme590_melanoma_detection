@@ -1,0 +1,18 @@
+version: '2'
+services:
+  jupyter:
+    image: gcr.io/tensorflow/tensorflow:latest
+    volumes:
+      - $PWD:/notebooks
+      - /Users/suyashkumar/Desktop/ISIC-images:/images
+    ports:
+      - 8888:8888
+    mem_limit: 10G
+
+  tensorboard:
+    image: gcr.io/tensorflow/tensorflow:latest
+    volumes:
+      - $PWD/notebooks/logs:/logs
+    ports:
+      - 6006:6006
+    command: tensorboard --logdir="/logs"

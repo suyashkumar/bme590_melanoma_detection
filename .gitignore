@@ -1,0 +1,7 @@
+**/*.pyc
+tf_files
+.idea/
+**/*~
+gradle* 
+.ipynb_checkpoints
+
