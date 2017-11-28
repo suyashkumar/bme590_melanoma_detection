@@ -1,4 +1,6 @@
 # Copyright 2017 The TensorFlow Authors. All Rights Reserved.
+# Modified by Suyash Kumar (suyash@suyashkumar.com) to generate predictions
+# with input ndarrays.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -53,6 +55,7 @@ def load_labels(label_file):
     label.append(l.rstrip())
   return label
 
+# TODO: cleanup and docs
 def get_prediction(image_matrix):
   model_file = "retrained_graph_2.pb"
   label_file = "retrained_labels.txt"
