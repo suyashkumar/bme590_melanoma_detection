@@ -57,8 +57,8 @@ def load_labels(label_file):
 
 # TODO: cleanup and docs
 def get_prediction(image_matrix):
-  model_file = "retrained_graph_2.pb"
-  label_file = "retrained_labels.txt"
+  model_file = "pretrained_inception_net/retrained_graph_2.pb"
+  label_file = "pretrained_inception_net/retrained_labels.txt"
   input_height = 299
   input_width = 299
   input_mean = 128
