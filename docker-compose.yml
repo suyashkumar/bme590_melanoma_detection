@@ -1,18 +1,19 @@
 version: '2'
 services:
   jupyter:
-    image: gcr.io/tensorflow/tensorflow:latest
+    build: .
     volumes:
       - $PWD:/notebooks
       - $PWD/images:/images
     ports:
-      - 8888:8888
-    mem_limit: 10G
-
-  tensorboard:
-    image: gcr.io/tensorflow/tensorflow:latest
+      - 8888:8888 
+  server:
+    build: .
     volumes:
-      - $PWD/notebooks/logs:/logs
+      - $PWD:/notebooks
+      - $PWD/images:/images
     ports:
-      - 6006:6006
-    command: tensorboard --logdir="/logs"
+      - 8000:8000
+    environment:
+      - FLASK_DEBUG=1
+    command: ["flask", "run", "--port=8000", "--host=0.0.0.0"]
